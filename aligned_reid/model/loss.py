@@ -9,6 +9,7 @@ def normalize(x, axis=-1):
   Returns:
     x: pytorch Variable, same shape as input      
   """
+  #这下面这一行是什么用法，没有.expand_as()函数呀，torch.norm里的参数也不对
   x = 1. * x / (torch.norm(x, 2, axis, keepdim=True).expand_as(x) + 1e-12)
   return x
 
